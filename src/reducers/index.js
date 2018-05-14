@@ -1,7 +1,7 @@
 import types from '../constants/';
 
 export const initialState = {
-  todos: []
+  todos: [],
 };
 
 export const reducer = (state = initialState, action) => {
@@ -13,14 +13,14 @@ export const reducer = (state = initialState, action) => {
           ...state.todos,
           {
             id: action.id,
-            text: action.text
-          }
-        ]
-      }
-      
+            text: action.text,
+          },
+        ],
+      };
+
     default:
       return state;
   }
-}
+};
 
 export default reducer;

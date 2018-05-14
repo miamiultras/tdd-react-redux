@@ -20,8 +20,8 @@ describe('Reducer', () => {
         {
           id: 1,
           text: todoText
-        }
-      ]
+        },
+      ],
     };
 
     expect(reducer(undefined, action)).toEqual(expectedState);
