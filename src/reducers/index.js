@@ -17,6 +17,14 @@ export const reducer = (state = initialState, action) => {
           },
         ],
       };
+    case types.DELETE_TODO:
+      return {
+        ...state,
+        todos: [
+          // filtruje te todo ktore nie maja takiego samego id jak przeslane
+          ...state.todos.filter(todo => todo.id !== action.id),
+        ],
+      };
 
     default:
       return state;

@@ -8,22 +8,50 @@ describe('Reducer', () => {
     expect(reducer(undefined, {})).toEqual(initialState);
   });
 
-  it('should return the correct state', () => {
-    const action = {
-      type: types.SUBMIT_TODO,
-      id: 1,
-      text: todoText
-    };
+  describe('add todo', () => {
+    it('should return the correct state', () => {
+      const action = {
+        type: types.SUBMIT_TODO,
+        id: 1,
+        text: todoText
+      };
 
-    const expectedState = {
-      todos: [
-        {
-          id: 1,
-          text: todoText
-        },
-      ],
-    };
+      const expectedState = {
+        todos: [
+          {
+            id: 1,
+            text: todoText
+          },
+        ],
+      };
 
-    expect(reducer(undefined, action)).toEqual(expectedState);
+      expect(reducer(undefined, action)).toEqual(expectedState);
+    });
   });
+
+  describe('delete todo', () => {
+    it('should return the correct state', () => {
+
+      const startingState = {
+        todos: [
+          {
+            id: 1,
+            text: todoText
+          },
+        ],
+      };
+
+      const action = {
+        type: types.DELETE_TODO,
+        id: 1,
+      };
+
+      const expectedState = {
+        todos: [],
+      };
+
+      expect(reducer(startingState, action)).toEqual(expectedState);
+    });
+  });
+
 });
