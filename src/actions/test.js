@@ -13,11 +13,23 @@ describe('Actions', () => {
     expect(actions.submitTodo(todoText)).toEqual(expectedAction);
   });
 
-  it('should delete an action to delete a todo', () => {
+  it('should create an action to delete a todo', () => {
     const expectedAction = {
       type: types.DELETE_TODO,
       id: 1,
     };
     expect(actions.deleteTodo(1)).toEqual(expectedAction);
-  })
+  });
+
+  it('should create an action to undelete a todo', () => {
+    const expectedAction = {
+      type: types.UNDELETE_TODO,
+      id: 1,
+    };
+    expect(actions.undeleteTodo(1)).toEqual(expectedAction);
+  });
+
+
+
+
 });
