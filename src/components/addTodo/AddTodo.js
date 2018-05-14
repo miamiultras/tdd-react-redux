@@ -29,11 +29,6 @@ const AddTodo = ({ submitTodo }) => {
   );
 };
 
-// default proptypes
-AddTodo.propTypes = {
-  submitTodo: PropTypes.func.isRequired,
-};
-
 // typechecking props form a component
 AddTodo.propTypes = {
   submitTodo: PropTypes.func.isRequired,
